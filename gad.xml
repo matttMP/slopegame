@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="Phuncks Flashgadget"
+  directory_title="Phuncks Flashgadget"
+  description="Phuncks Flashgadget"
+  author="Aslak Grinsted" author_email="rek@phunck.cmo"
+  author_link="http://www.glaciology.net"
+  scrolling="false"
+  category="funandgames"> 
+  <Require feature="flash" /> 
+  </ModulePrefs>
+
+  <UserPref name="swf" display_name="url to swf" datatype="string" required="true" default_value="http://www.jeroenwijering.com/embed/mediaplayer.swf" /> 
+  
+  <UserPref name="wmode" display_name="wmode" datatype="string" required="true" default_value="opaque" /> 
+  <UserPref name="bgcolor" display_name="bgcolor" datatype="string" required="true" default_value="#000000" /> 
+  <UserPref name="allowfullscreen" display_name="allowfullscreen" datatype="string" required="true" default_value="true" /> 
+  <UserPref name="flashheight" display_name="flash height" datatype="string" required="true" default_value="200" /> 
+  <UserPref name="flashwidth" display_name="flash width" datatype="string" required="true" default_value="100%" /> 
+  <UserPref name="swf_version" display_name="Min. SWF version" datatype="string" required="true" default_value="0" /> 
+  <UserPref name="flashvars" display_name="Flash vars" datatype="string" required="true" default_value="'height=200&amp;width=400&amp;file='+_esc('http://vid122.photobucket.com/albums/o250/SIRSCUBA/Cat/BABY-KITTEN.flv')" /> 
+  <UserPref name="cacheflash" display_name="Let google cache flash?" datatype="bool" required="true" default_value="1" /> 
+
+ 
+<Content type="html"><![CDATA[<div id='swfwrapper'></div>
+<script type="text/javascript" language="javascript"> 
+   var prefs = new _IG_Prefs(__MODULE_ID__);
+	 var params= {
+	 	swf_version: prefs.getString("swf_version"),
+		wmode: prefs.getString("wmode"),
+		bgcolor: prefs.getString("bgcolor"),
+		allowfullscreen: prefs.getString("allowfullscreen"),
+		width: prefs.getString("flashwidth"),
+		height: prefs.getString("flashheight"),
+		flashvars: eval(prefs.getString("flashvars"))
+	};
+	 var ok;
+	 if (prefs.getBool("cacheflash")) {
+	 	  ok=_IG_EmbedCachedFlash(prefs.getString("swf"), 'swfwrapper', params);
+	} else {
+   		ok=_IG_EmbedFlash(prefs.getString("swf"), 'swfwrapper', params);
+  }
+  
+   if (!ok) {
+   	//_gel('swfwrapper').innerText='error loading flash.';
+  };
+   
+</script>]]></Content>
+
+</Module>
