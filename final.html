@@ -1,0 +1,8 @@
+<script src="https://raw.githack.com/matttMP/slopegame/main/UnityProgress.js"></script>
+    <script src="https://raw.githack.com/matttMP/slopegame/main/unityloader41.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "https://www-sites-opensocial.googleusercontent.com/gadgets/proxy/refresh=3600&container=enterprise&rewriteMime=application%2Fx-shockwave-flash&gadget=https%3A%2F%2Fraw.githack.com%2FmatttMP%2Fslopegame%2Fmain%2Fgad.xml/https://raw.githack.com/matttMP/slopegame/main/slope_new.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}});
+    </script>
+    <div class="webgl-content">
+        <div id="gameContainer" style="width: 800px; height: 660px; margin: auto"></div>
+        </div>
