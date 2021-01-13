@@ -1,3 +1,3 @@
 # slopegame
 
-lol full source thanks 66ez ♥️♥️♥️ ily 4 the leak
+thank u 66ez for old leak and simon for new one ♥️♥️
